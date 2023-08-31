@@ -1,9 +1,17 @@
 import { MoreVert } from '@mui/icons-material'
 import Wrapper from './style'
 import {Users} from '../../data.js'
+import { useState } from 'react'
 
 const Post = ({post}) => {
     const user = Users.filter(u => u.id === post.userId)
+    const [like, setLike] = useState(post.like)
+    const [isLiked, setIsLiked] = useState(false)
+
+    const likeHandler = () => {
+        setLike(isLiked ? like - 1 : like + 1)
+        setIsLiked(!isLiked)
+    }
 
     return (
     <Wrapper>
@@ -23,9 +31,9 @@ const Post = ({post}) => {
         </div>
         <div className="bottom">
             <div className='left'>
-                <img src="/assets/like.png" alt="" className='icon' />
-                <img src="/assets/heart.png" alt="" className='icon' />
-                <span>{post.like} people like it</span>
+                <img src="/assets/like.png" alt="" className='icon' onClick={likeHandler} />
+                <img src="/assets/heart.png" alt="" className='icon' onClick={likeHandler} />
+                <span>{like} people like it</span>
             </div>
             <div className='right'>
                 <span>{post.comment} comments</span>
