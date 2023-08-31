@@ -15,7 +15,7 @@ const Post = () => {
             </div>
         </div>
         <div className="center">
-            <span>Het! Its my first post:)</span>
+            <span>Hey! Its my first post:)</span>
             <img src="/assets/post/1.jpeg" alt="" />
         </div>
         <div className="bottom">
