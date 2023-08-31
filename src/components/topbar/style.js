@@ -2,7 +2,11 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.header`
 background-color: #1877f2;
-padding: 10px 0;
+height: 50px;
+display: flex;
+align-items: center;
+position: sticky;
+top: 0;
 
 .inner{
     width: 98%;

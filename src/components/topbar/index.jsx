@@ -1,7 +1,7 @@
 import { Chat, Notifications, Person, Search } from '@mui/icons-material'
 import Wrapper from './style'
 
-const Topbar = () => {
+const TopBar = () => {
     return (
         <Wrapper>
             <div className="inner">
@@ -42,4 +42,4 @@ const Topbar = () => {
     )
 }
 
-export default Topbar
+export default TopBar
