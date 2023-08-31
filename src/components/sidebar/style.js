@@ -4,6 +4,8 @@ const Wrapper = styled.div`
 flex: 3;
 height: calc(100vh - 50px);
 overflow-y: auto;
+position: sticky;
+top: 50px; 
 
 &::-webkit-scrollbar{
     width: 5px;
@@ -44,18 +46,6 @@ overflow-y: auto;
     hr{
         margin: 20px 0;
     }
-
-    .friend-list{
-        li{
-            img{
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
-        }
-    }
-
 }
 `
 export default Wrapper

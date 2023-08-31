@@ -1,31 +1,34 @@
 import { MoreVert } from '@mui/icons-material'
 import Wrapper from './style'
+import {Users} from '../../data.js'
 
-const Post = () => {
-  return (
+const Post = ({post}) => {
+    const user = Users.filter(u => u.id === post.userId)
+
+    return (
     <Wrapper>
         <div className="top">
             <div className="left">
-                <img src="/assets/person/1.jpeg" alt="" />
-                <span className='username'>Safak kocaoglu</span>
-                <span className='date'>5 mins ago</span>
+                <img src={user[0].profilePicture} alt="" />
+                <span className='username'>{user[0].username}</span>
+                <span className='date'>{post.date}</span>
             </div>
             <div className="right">
                 <MoreVert />
             </div>
         </div>
         <div className="center">
-            <span>Hey! Its my first post:)</span>
-            <img src="/assets/post/1.jpeg" alt="" />
+            <span>{post?.desc}</span>
+            <img src={post.photo} alt="" />
         </div>
         <div className="bottom">
             <div className='left'>
                 <img src="/assets/like.png" alt="" className='icon' />
                 <img src="/assets/heart.png" alt="" className='icon' />
-                <span>32 people like it</span>
+                <span>{post.like} people like it</span>
             </div>
             <div className='right'>
-                <span>9 comments</span>
+                <span>{post.comment} comments</span>
             </div>
         </div>
     </Wrapper>

@@ -1,6 +1,8 @@
 import React from 'react'
 import Wrapper from './style'
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from '@mui/icons-material'
+import Friend from '../friend'
+import {Users} from '../../data.js'
 
 const Sidebar = () => {
   return (
@@ -47,26 +49,11 @@ const Sidebar = () => {
         <button>Show More</button>
         <hr />
         <ul className='friend-list'>
-          <li>
-            <img src="/assets/person/2.jpeg" alt="" />
-            <span>Jane Doe</span>
-          </li>
-          <li>
-            <img src="/assets/person/2.jpeg" alt="" />
-            <span>Jane Doe</span>
-          </li>
-          <li>
-            <img src="/assets/person/2.jpeg" alt="" />
-            <span>Jane Doe</span>
-          </li>
-          <li>
-            <img src="/assets/person/2.jpeg" alt="" />
-            <span>Jane Doe</span>
-          </li>
-          <li>
-            <img src="/assets/person/2.jpeg" alt="" />
-            <span>Jane Doe</span>
-          </li>
+          {
+            Users.map((user) => (
+              <Friend  key={user.id} user={user}/>
+            ))
+          }
         </ul>
       </div>
     </Wrapper>
